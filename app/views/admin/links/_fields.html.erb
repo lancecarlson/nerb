@@ -1,0 +1,6 @@
+<p>
+	<%= text_field :path, :label => "Path" %>
+</p>
+<p>
+	<%= select :page_id, :collection => Page.all, :text_method => :title, :value_method => :id %>
+</p>

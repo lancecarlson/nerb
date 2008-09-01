@@ -1,0 +1,12 @@
+<h1>Editing <%= @page.title %></h1>
+
+<%= error_messages_for @page %>
+
+<%= form_for(@page, :action => url(:admin_page, @page)) do %>
+	<%= partial :fields %>
+  <p>
+    <%= submit "Save Changes" %>
+  </p>
+<% end =%>
+
+<%= link_to 'Pages', url(:admin_pages) %>

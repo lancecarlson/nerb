@@ -1,0 +1,19 @@
+<h1>New page</h1>
+
+<%= error_messages_for @page %>
+
+<%= form_for(@page, :action => url(:admin_pages) ) do %>
+	<%= partial :fields %>
+	
+	<% fields_for @link do %>
+	<p>
+		<%= text_field :path, :label => "First Link" %>
+	</p>
+	<% end %>
+	
+  <p>
+    <%= submit "Create" %>
+  </p>
+<% end =%>
+
+<%= link_to 'Pages', url(:admin_pages) %>

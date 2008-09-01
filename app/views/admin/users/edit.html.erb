@@ -1,0 +1,12 @@
+<h1>Editing <%= @user.email %></h1>
+
+<%= error_messages_for @user %>
+
+<%= form_for(@user, :action => url(:admin_user, @user)) do %>
+	<%= partial :fields %>
+  <p>
+    <%= submit "Save Changes" %>
+  </p>
+<% end =%>
+
+<%= link_to 'Users', url(:admin_users) %>

@@ -1,0 +1,16 @@
+<h1>Pages</h1>
+
+<table>
+  <tr>
+		<th>Page</th></td>
+  </tr>
+
+<% for page in @pages %>
+  <tr>
+		<td><%= link_to page.title, url(:edit_admin_page, page) %></td>
+		<td><%= link_to "Remove Page", url(:admin_page, page), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'New', url(:new_admin_page) %>

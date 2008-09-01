@@ -1,0 +1,18 @@
+<% jquery do %>
+  $('#page_title').change {
+		alert('test');
+	}
+<% end %>
+
+<h1>New link</h1>
+
+<%= error_messages_for @link %>
+
+<%= form_for(@link, :action => url(:admin_links) ) do %>
+	<%= partial :fields %>
+  <p>
+    <%= submit "Create" %>
+  </p>
+<% end =%>
+
+<%= link_to 'Back', url(:admin_links) %>

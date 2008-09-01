@@ -1,0 +1,17 @@
+<h1>Links</h1>
+
+<table>
+  <tr>
+		<th>Path</th>
+		<th>Page</th>
+  </tr>
+
+<% for link in @links %>
+  <tr>
+		<td><%= link_to link.path, url(:edit_admin_link, link) %></td>
+		<td><%= link_to link.page.title, url(:edit_admin_page, link.page) %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'New', url(:new_admin_link) %>

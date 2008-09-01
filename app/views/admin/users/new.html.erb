@@ -1,0 +1,13 @@
+<h1>New user</h1>
+
+<%= error_messages_for @user %>
+
+<%= form_for(@user, :action => url(:admin_users) ) do %>
+	<%= partial :fields %>
+	
+  <p>
+    <%= submit "Create" %>
+  </p>
+<% end =%>
+
+<%= link_to 'Pages', url(:admin_users) %>
