@@ -1,6 +1,6 @@
 module Nerb
   module Admin
-    class Users < Nerb::Application
+    class Users < Application
       layout 'admin'
       before :login_required
 
