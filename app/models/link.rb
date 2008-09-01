@@ -21,7 +21,7 @@ module Nerb
     end
 
     def path=(new_path)
-      new_path = Link.sanitize_path(new_path)
+      new_path = Nerb::Link.sanitize_path(new_path)
 
       attribute_set(:path, new_path)
     end

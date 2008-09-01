@@ -31,6 +31,5 @@ module Nerb
     before :create, :make_activation_code
     after  :create, :send_signup_notification
 
-
   end
 end

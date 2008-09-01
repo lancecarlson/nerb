@@ -82,6 +82,9 @@ if defined?(Merb::Plugins)
   
   # Add dependencies for other Nerb classes below. Example:
   #dependency "nerb/other"
+  dependencies "dm-types", "dm-validations", "dm-serializer", "dm-aggregates", "dm-is-state_machine"
+  
   dependencies "merb-auth"
   
+  use_orm :datamapper
 end

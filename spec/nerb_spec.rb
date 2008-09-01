@@ -40,20 +40,20 @@ describe "Nerb (module)" do
   end
   
   it "should have metadata properties" do
-    Nerb.description.should == "Nerb is a chunky Merb slice!"
+    Nerb.description.should == "Nerb is a Pocket CMS Slice"
     Nerb.version.should == "0.0.1"
-    Nerb.author.should == "YOUR NAME"
+    Nerb.author.should == "Lance Carlson"
   end
   
-  it "should have :routes and :named_routes properties" do
-    Nerb.routes.should_not be_empty
-    Nerb.named_routes[:nerb_index].should be_kind_of(Merb::Router::Route)
-  end
+  # it "should have :routes and :named_routes properties" do
+    # Nerb.routes.should_not be_empty
+    # Nerb.named_routes[:nerb_index].should be_kind_of(Merb::Router::Route)
+  # end
 
-  it "should have an url helper method for slice-specific routes" do
-    Nerb.url(:controller => 'main', :action => 'show', :format => 'html').should == "/nerb/main/show.html"
-    Nerb.url(:nerb_index, :format => 'html').should == "/nerb/index.html"
-  end
+  # it "should have an url helper method for slice-specific routes" do
+  #   Nerb.url(:controller => 'main', :action => 'show', :format => 'html').should == "/nerb/main/show.html"
+  #   Nerb.url(:nerb_index, :format => 'html').should == "/nerb/index.html"
+  # end
   
   it "should have a config property (Hash)" do
     Nerb.config.should be_kind_of(Hash)

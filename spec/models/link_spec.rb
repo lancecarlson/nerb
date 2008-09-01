@@ -1,17 +1,27 @@
 require File.join( File.dirname(__FILE__), '..', "spec_helper" )
 
-describe Link do
+describe Nerb::Link do
   before do
-    @link = Link.new
+    DataMapper.setup(:default, 'sqlite3::memory:')
+    Merb.stub!(:orm_generator_scope).and_return("datamapper")
+    
+    @link = Nerb::Link.new
   end
   
-  describe "Link.locate" do
+  describe "Nerb::Link.locate" do
     before do
-      @link = Link.create! :path => "test-path", :page_id => 1
+      @page = mock(Nerb::Page)
+      @page.stub!(:new_record?).and_return(false)
+      @page.stub!(:attribute_loaded?).and_return(true)
+      Nerb::Link.auto_migrate!
+      @link = Nerb::Link.new :path => "test-path"
+      @link.page_id = @page.id
+      @link.save
     end
     
-    it "should find the path from the request" do      
-      Link.locate("/test-path").should == @link
+    it "should find the path from the request" do  
+      Nerb::Link.all.should == [@link]    
+      Nerb::Link.locate("/test-path").should == @link
     end
   end
   

@@ -6,14 +6,14 @@ require 'merb-core/tasks/merb_rake_helper'
 require 'merb-core/test/tasks/spectasks'
 
 NAME = "nerb"
-AUTHOR = "Your Name"
-EMAIL = "Your Email"
-HOMEPAGE = "http://merbivore.com/"
-SUMMARY = "Merb Slice that provides ..."
-GEM_VERSION = "0.9.6"
+AUTHOR = "Lance Carlson"
+EMAIL = "lcarlson@rubyskills.com"
+HOMEPAGE = "http://www.rubyskills.com/"
+SUMMARY = "A pocket-sized CMS sliced for Merb"
+GEM_VERSION = "0.0.1"
 
 spec = Gem::Specification.new do |s|
-  s.rubyforge_project = 'merb'
+  s.rubyforge_project = 'nerb'
   s.name = NAME
   s.version = GEM_VERSION
   s.platform = Gem::Platform::RUBY
@@ -24,6 +24,7 @@ spec = Gem::Specification.new do |s|
   s.author = AUTHOR
   s.email = EMAIL
   s.homepage = HOMEPAGE
+  s.add_dependency('merb-auth', '>= 0.9.6')
   s.add_dependency('merb-slices', '>= 0.9.6')
   s.require_path = 'lib'
   s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{lib,spec,app,public,stubs}/**/*")
